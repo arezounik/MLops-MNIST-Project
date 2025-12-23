@@ -1,0 +1,22 @@
+# requirements.txt
+mlflow==3.5.1
+cloudpickle==3.1.2
+numpy==2.3.4
+pandas==2.3.3
+torch==2.9.0
+torchvision==0.24.0
+
+
+
+
+
+fastapi
+uvicorn[standard]
+pydantic>=2.1
+scikit-learn  # mlflow dependency
+torchvision
+sqlalchemy
+pymysql
+requests
+boto3
+

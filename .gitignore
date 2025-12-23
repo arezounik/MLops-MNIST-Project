@@ -1,0 +1,20 @@
+# .gitignore
+
+
+# Security
+.env
+
+# python
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+
+#
+mlruns/
+data/
+pytorch_trained_model/
+pretrained_weights/
+FINAL_DEPLOYABLE_MODEL_local/
+
+# database
+db_data/

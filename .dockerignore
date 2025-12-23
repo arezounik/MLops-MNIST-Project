@@ -1,0 +1,32 @@
+# .dockerignore
+
+# important
+
+.env
+.git
+.gitignore
+
+# MLops
+
+db_data/
+mlruns/
+data/
+pretrained_weights/
+pytorch_trained_model/
+Readme/
+
+
+# Data_API
+
+Data-API/mlruns/
+Data-API/__pycache__/
+Data-API/data/
+
+# python
+
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.venv/
+venv/

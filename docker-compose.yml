@@ -1,0 +1,53 @@
+#version: '3.8'
+
+
+services:
+  # first container connects itself to MySQL
+  db:
+    image: mysql:8.0
+    container_name: mlops_mysql_db
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_DATABASE: ${MYSQL_DB}
+      MYSQL_USER: ${MYSQL_USER}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+    ports:
+     # - "3306:3306"
+      - "3307:3306"
+    volumes:
+      # save dataset for having stable system
+      - db_data:/var/lib/mysql
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      timeout: 20s
+      retries: 10
+
+  # second container for performing (ETL API & Prediction API)
+  app:
+    build: .
+    container_name: mlops_api_system
+    ports:
+      - "8000:8000"  # ETL API
+      - "8001:8001"  # Prediction API
+    environment:
+      # !!!!!!!!!! The name of Host have to be db
+      MYSQL_HOST: db
+      MYSQL_USER: ${MYSQL_USER}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+      MYSQL_DB: mlops_db
+      MYSQL_PORT: 3306
+      # calling ETL API by Prediction API
+      #DATA_API_BASE_URL: http://localhost:8000
+      DATA_API_BASE_URL: http://127.0.0.1:8000
+    volumes:
+      # local_path in my system 
+      - ./Data-API/data:/app/data
+      - ./Data-API/FINAL_DEPLOYABLE_MODEL_local:/app/FINAL_DEPLOYABLE_MODEL_local
+    depends_on:
+      db:
+        condition: service_healthy 
+
+volumes:
+  db_data:
