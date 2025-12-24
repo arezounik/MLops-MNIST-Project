@@ -19,12 +19,12 @@ docker-compose up --build
 1. Open docker-compose.yml
 2. Comment out the build line
 ```yaml
-# build: .
+build: .
 ```
 
 3. Uncomment the image line:
 ```yaml
-image: arezounik/mlops-app:dev
+# image: arezounik/mlops-app:dev
 ```
 
 4. Run the following command in your terminal:
