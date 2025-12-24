@@ -8,13 +8,24 @@
 __pycache__/
 *.pyc
 .ipynb_checkpoints/
+.DS_Store
 
-#
-mlruns/
-data/
-pytorch_trained_model/
-pretrained_weights/
-FINAL_DEPLOYABLE_MODEL_local/
+
+# MLops
+/pytorch_trained_model/
+/pretrained_weights/
+/Readme/
+/data/
+/mlruns/
+
+
+
+# Data API
+
+/Data-API/data/
+/Data-API/mlruns/
+/Data-API/
+
 
 # database
 db_data/

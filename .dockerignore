@@ -10,9 +10,9 @@
 
 db_data/
 mlruns/
-data/
-pretrained_weights/
-pytorch_trained_model/
+/data/
+/pretrained_weights/
+/pytorch_trained_model/
 Readme/
 
 
