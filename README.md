@@ -8,30 +8,30 @@ This project is a containerized Deep Learning application for MNIST digit classi
 
 
 
-   *Building from Source*
+   *! Building from Source*
 
-      1.Run the following command in your terminal:
+      1. Run the following command in your terminal:
 
         ```bash
         docker-compose up --build
 
 
 
-   *Running with Docker Hub Image*
+   *! Running with Docker Hub Image*
 
-      1.Open docker-compose.yml
+      1. Open docker-compose.yml
 
-      2.Comment out the build line:
+      2. Comment out the build line:
 
 	```bash
 	build: .
 
-      3.Uncomment the image line:
+      3. Uncomment the image line:
 
 	```bash 
 	# image: arezounik/mlops-app:dev
 
-      4.Run the following command in your terminal:
+      4. Run the following command in your terminal:
 
 	```bash
         docker-compose up
