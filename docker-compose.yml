@@ -27,6 +27,7 @@ services:
   # second container for performing (ETL API & Prediction API)
   app:
     build: .
+    # image: arezounik/mlops-app:dev
     container_name: mlops_api_system
     ports:
       - "8000:8000"  # ETL API
