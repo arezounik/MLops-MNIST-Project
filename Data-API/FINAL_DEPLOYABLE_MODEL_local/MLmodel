@@ -1,0 +1,35 @@
+artifact_path: file:///home/arezou/anaconda3/envs/practice/MLops/mlruns/143711784763036826/models/m-2815d32522b9488a968436bd72d3db05/artifacts
+flavors:
+  python_function:
+    artifacts:
+      pytorch_model_path:
+        path: artifacts/full_system_model
+        uri: runs:/8faf64ff1aa240cd86eee603101ad747/full_system_model
+    cloudpickle_version: 3.1.2
+    code: null
+    env:
+      conda: conda.yaml
+      virtualenv: python_env.yaml
+    loader_module: mlflow.pyfunc.model
+    python_model: python_model.pkl
+    python_version: 3.11.13
+    streamable: false
+is_signature_from_type_hint: false
+mlflow_version: 3.5.1
+model_id: m-2815d32522b9488a968436bd72d3db05
+model_size_bytes: 3543202
+model_uuid: m-2815d32522b9488a968436bd72d3db05
+prompts: null
+run_id: 8faf64ff1aa240cd86eee603101ad747
+saved_input_example_info:
+  artifact_path: input_example.json
+  serving_input_path: serving_input_example.json
+  type: ndarray
+signature:
+  inputs: '[{"type": "tensor", "tensor-spec": {"dtype": "float32", "shape": [-1, 1,
+    28, 28]}}]'
+  outputs: '[{"type": "tensor", "tensor-spec": {"dtype": "float32", "shape": [-1,
+    10]}}]'
+  params: null
+type_hint_from_example: false
+utc_time_created: '2025-11-13 17:43:45.293811'
