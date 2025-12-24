@@ -14,7 +14,6 @@ __pycache__/
 # MLops
 /pytorch_trained_model/
 /pretrained_weights/
-/Readme/
 /data/
 /mlruns/
 
@@ -29,3 +28,4 @@ __pycache__/
 
 # database
 db_data/
+Readme/
